@@ -28,6 +28,7 @@ export default function RootLayout() {
         options={{
           gestureEnabled: true,
           headerShown: false,
+          animation: 'fade',
         }}
       />
       <Stack.Screen
@@ -36,6 +37,7 @@ export default function RootLayout() {
           gestureEnabled: true,
           headerShown: false,
           headerTitle: 'Morning Adhkar',
+          animation: 'fade',
         }}
       />
       <Stack.Screen
@@ -44,6 +46,7 @@ export default function RootLayout() {
           gestureEnabled: true,
           headerShown: false,
           headerTitle: 'Evening Adhkar',
+          animation: 'fade',
         }}
       />
     </Stack>

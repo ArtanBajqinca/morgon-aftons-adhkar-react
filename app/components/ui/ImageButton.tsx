@@ -1,0 +1,34 @@
+import { forwardRef } from 'react';
+import {
+  Image,
+  Pressable,
+  type ImageSourcePropType,
+  type PressableProps,
+  type View,
+} from 'react-native';
+
+interface IImageButtonProps extends PressableProps {
+  image: ImageSourcePropType;
+}
+
+const ImageButton = forwardRef<View, IImageButtonProps>(
+  ({ image, onPress, className, ...props }, ref) => (
+    <Pressable
+      ref={ref}
+      onPress={onPress}
+      className={`active:opacity-70 ${className}`}
+      {...props}
+    >
+      <Image
+        source={image}
+        className="h-full w-full"
+        resizeMode="cover"
+        accessibilityLabel="Image Button"
+      />
+    </Pressable>
+  )
+);
+
+ImageButton.displayName = 'ImageButton';
+
+export default ImageButton;
