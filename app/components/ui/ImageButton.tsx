@@ -16,7 +16,7 @@ const ImageButton = forwardRef<View, IImageButtonProps>(
     <Pressable
       ref={ref}
       onPress={onPress}
-      className={`active:opacity-70 ${className}`}
+      className={`active:opacity-90 items-center justify-center ${className}`}
       {...props}
     >
       <Image

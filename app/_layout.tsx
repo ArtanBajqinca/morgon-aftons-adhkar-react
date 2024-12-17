@@ -9,6 +9,7 @@ export default function RootLayout() {
   React.useEffect(() => {
     // Navigation bar configuration
     async function configureNavigationBar() {
+      await NavigationBar.setPositionAsync('absolute');
       await NavigationBar.setBackgroundColorAsync('#363636');
       await NavigationBar.setButtonStyleAsync('light');
       await NavigationBar.setBorderColorAsync('#363636');

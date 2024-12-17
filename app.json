@@ -9,10 +9,12 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
+      "orientation": "portrait",
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
+        "orientation": "portrait",
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       }
