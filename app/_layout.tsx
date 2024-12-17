@@ -1,8 +1,20 @@
+import React from 'react';
 import { Stack } from 'expo-router';
 import { useFonts } from 'expo-font';
 import type { FontSource } from 'expo-font';
+import { StatusBar } from 'react-native';
+import * as NavigationBar from 'expo-navigation-bar';
 
 export default function RootLayout() {
+  React.useEffect(() => {
+    async function configureNavigationBar() {
+      await NavigationBar.setBackgroundColorAsync('#363636'); // white background
+      await NavigationBar.setButtonStyleAsync('light'); // dark buttons
+      await NavigationBar.setBorderColorAsync('#363636'); // white border
+    }
+    configureNavigationBar();
+  }, []);
+
   const [fontsLoaded] = useFonts({
     'Avenir-Black': require('@/assets/fonts/Avenir-Black.ttf') as FontSource,
     'Avenir-Book': require('@/assets/fonts/Avenir-Book.ttf') as FontSource,
@@ -22,33 +34,41 @@ export default function RootLayout() {
   }
 
   return (
-    <Stack>
-      <Stack.Screen
-        name="views/start-screen"
-        options={{
-          gestureEnabled: true,
-          headerShown: false,
-          animation: 'fade',
-        }}
+    <>
+      {/* StatusBar Configuration */}
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor="transparent"
+        translucent
       />
-      <Stack.Screen
-        name="views/morgon-screen"
-        options={{
-          gestureEnabled: true,
-          headerShown: false,
-          headerTitle: 'Morning Adhkar',
-          animation: 'fade',
-        }}
-      />
-      <Stack.Screen
-        name="views/afton-screen"
-        options={{
-          gestureEnabled: true,
-          headerShown: false,
-          headerTitle: 'Evening Adhkar',
-          animation: 'fade',
-        }}
-      />
-    </Stack>
+      <Stack>
+        <Stack.Screen
+          name="views/start-screen"
+          options={{
+            gestureEnabled: true,
+            headerShown: false,
+            animation: 'fade',
+          }}
+        />
+        <Stack.Screen
+          name="views/morgon-screen"
+          options={{
+            gestureEnabled: true,
+            headerShown: false,
+            headerTitle: 'Morning Adhkar',
+            animation: 'fade',
+          }}
+        />
+        <Stack.Screen
+          name="views/afton-screen"
+          options={{
+            gestureEnabled: true,
+            headerShown: false,
+            headerTitle: 'Evening Adhkar',
+            animation: 'fade',
+          }}
+        />
+      </Stack>
+    </>
   );
 }
