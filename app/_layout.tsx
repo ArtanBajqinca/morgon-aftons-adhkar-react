@@ -7,10 +7,11 @@ import * as NavigationBar from 'expo-navigation-bar';
 
 export default function RootLayout() {
   React.useEffect(() => {
+    // Navigation bar configuration
     async function configureNavigationBar() {
-      await NavigationBar.setBackgroundColorAsync('#363636'); // white background
-      await NavigationBar.setButtonStyleAsync('light'); // dark buttons
-      await NavigationBar.setBorderColorAsync('#363636'); // white border
+      await NavigationBar.setBackgroundColorAsync('#363636');
+      await NavigationBar.setButtonStyleAsync('light');
+      await NavigationBar.setBorderColorAsync('#363636');
     }
     configureNavigationBar();
   }, []);
