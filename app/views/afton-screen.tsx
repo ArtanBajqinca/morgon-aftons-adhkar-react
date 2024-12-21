@@ -8,7 +8,7 @@ export default function AftonScreen() {
     <View className="flex-1 items-center justify-center gap-10">
       <Text className="text-black text-[24px] font-bold">Afton Screen</Text>
 
-      <Link asChild href="/views/start-screen">
+      <Link asChild href="/">
         <Button label="Start" />
       </Link>
     </View>

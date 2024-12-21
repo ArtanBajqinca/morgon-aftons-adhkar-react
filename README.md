@@ -16,10 +16,10 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
     npx expo start
    ```
 
-3. Run it with android emulator
+3. Run it with android emulator or device
 
    npx expo run:android --device
-   Might need to create local.properties and add you sdk.dir
+   Might need to create local.properties and add you sdk.dir=(path here)
 
 In the output, you'll find options to open the app in a
 

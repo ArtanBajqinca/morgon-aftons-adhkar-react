@@ -1,22 +1,22 @@
-import React from 'react';
-import { Stack } from 'expo-router';
-import { useFonts } from 'expo-font';
-import type { FontSource } from 'expo-font';
+import React, { useEffect } from 'react';
+import { SplashScreen, Stack } from 'expo-router';
 import { StatusBar } from 'react-native';
-import * as NavigationBar from 'expo-navigation-bar';
 import useLoadFonts from '@/app/hooks/useLoadFonts';
 import configureNavigationBar from '@/app/utils/configureNavigationBar';
 
 export default function RootLayout() {
-  React.useEffect(() => {
-    configureNavigationBar();
-  }, []);
+  
+  // Configure Navigation Bar
+  configureNavigationBar();
 
+  // Load Fonts
   const fontsLoaded = useLoadFonts();
 
   if (!fontsLoaded) {
     return null;
   }
+
+  SplashScreen.hide();
 
   return (
     <>
@@ -26,9 +26,10 @@ export default function RootLayout() {
         backgroundColor="transparent"
         translucent
       />
+      {/* Stack Navigator */}
       <Stack>
         <Stack.Screen
-          name="views/start-screen"
+          name="index"
           options={{
             gestureEnabled: true,
             headerShown: false,
