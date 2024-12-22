@@ -1,25 +1,35 @@
-import React, { useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { SplashScreen, Stack } from 'expo-router';
-import { StatusBar } from 'react-native';
+import { StatusBar, Platform, View } from 'react-native';
 import useLoadFonts from '@/app/hooks/useLoadFonts';
 import configureNavigationBar from '@/app/utils/configureNavigationBar';
 
+// Prevent splash screen from auto-hiding
+SplashScreen.preventAutoHideAsync();
+
 export default function RootLayout() {
-  
-  // Configure Navigation Bar
-  configureNavigationBar();
+  const [appIsReady, setAppIsReady] = useState(false);
 
   // Load Fonts
-  const fontsLoaded = useLoadFonts();
+  useLoadFonts();
 
-  if (!fontsLoaded) {
-    return null;
+  // Configure Navigation Bar (android)
+  if (Platform.OS === 'android') {
+    configureNavigationBar();
   }
 
-  SplashScreen.hide();
+  useEffect(() => {
+    setAppIsReady(true);
+  }, []);
+
+  const onLayoutRootView = useCallback(() => {
+    if (appIsReady) {
+      SplashScreen.hideAsync();
+    }
+  }, [appIsReady]);
 
   return (
-    <>
+    <View onLayout={onLayoutRootView} className="flex-1">
       {/* StatusBar Configuration */}
       <StatusBar
         barStyle="dark-content"
@@ -55,6 +65,6 @@ export default function RootLayout() {
           }}
         />
       </Stack>
-    </>
+    </View>
   );
 }
