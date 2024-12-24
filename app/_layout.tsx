@@ -64,6 +64,33 @@ export default function RootLayout() {
             animation: 'fade',
           }}
         />
+        <Stack.Screen
+          name="views/reward-screen"
+          options={{
+            gestureEnabled: true,
+            headerShown: false,
+            headerTitle: 'Rewards',
+            animation: 'fade',
+          }}
+        />
+        <Stack.Screen
+          name="views/time-screen"
+          options={{
+            gestureEnabled: true,
+            headerShown: false,
+            headerTitle: 'Morning & Evening Times',
+            animation: 'fade',
+          }}
+        />
+        <Stack.Screen
+          name="views/about-screen"
+          options={{
+            gestureEnabled: true,
+            headerShown: false,
+            headerTitle: 'App Info',
+            animation: 'fade',
+          }}
+        />
       </Stack>
     </View>
   );

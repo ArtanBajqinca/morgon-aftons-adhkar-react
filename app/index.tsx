@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { View } from 'react-native';
 import { Link } from 'expo-router';
@@ -31,12 +30,12 @@ function StartScreenContent() {
   );
 }
 
-export default function StartScreen() {
-  const [drawerContentKey, setDrawerContentKey] = useState(0);
+const drawerContent = () => <StartDrawerContent />;
 
+export default function StartScreen() {
   return (
     <Drawer.Navigator
-      drawerContent={() => <StartDrawerContent key={drawerContentKey} />}
+      drawerContent={drawerContent}
       screenOptions={{
         drawerStyle: {
           width: 235,

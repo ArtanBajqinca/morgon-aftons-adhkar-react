@@ -19,12 +19,8 @@ module.exports = {
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/require-default-props': 'off',
-    '@typescript-eslint/no-var-requires': [
-      'error',
-      {
-        allow: ['**/assets/fonts/*'],
-      },
-    ],
+    '@typescript-eslint/no-var-requires': 'off',
+    'global-require': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/function-component-definition': 'off',
     'sort-destructure-keys/sort-destructure-keys': 'off',

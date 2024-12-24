@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { Pressable, Image, Text, View } from 'react-native';
 import { type ImageSourcePropType } from 'react-native';
 
@@ -7,21 +7,16 @@ interface DrawerButtonProps {
   label: string;
   onPress: () => void;
   backgroundColor: string;
-  iconWidth?: number;
+  iconWidth: number;
 }
 
-const DrawerButton: React.FC<DrawerButtonProps> = ({
-  icon,
-  label,
-  onPress,
-  backgroundColor,
-  iconWidth,
-}) => {
-  return (
+const DrawerButton = forwardRef<View, DrawerButtonProps>(
+  ({ icon, label, onPress, backgroundColor, iconWidth }, ref) => (
     <Pressable
+      ref={ref}
       onPress={onPress}
       style={{ backgroundColor }}
-      className="h-[70px] w-[210px] rounded-tr-[10px] rounded-br-[10px] flex-row items-center mb-[30px]"
+      className="h-[70px] w-[210px] rounded-tr-[10px] rounded-br-[10px] flex-row items-center mb-[30px] active:opacity-80"
     >
       <Image
         source={icon}
@@ -31,14 +26,16 @@ const DrawerButton: React.FC<DrawerButtonProps> = ({
       />
       <View className="flex-1 justify-center">
         <Text
-          className="text-white text-[16.1px] font-avenir-heavy  py-2 pt-5 leading-[16px] mr-5"
+          className="text-white text-[16.1px] font-avenir-heavy py-2 pt-5 leading-[16px] mr-5"
           numberOfLines={2}
         >
           {label}
         </Text>
       </View>
     </Pressable>
-  );
-};
+  )
+);
+
+DrawerButton.displayName = 'DrawerButton';
 
 export default DrawerButton;
