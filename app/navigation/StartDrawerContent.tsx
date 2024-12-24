@@ -40,7 +40,7 @@ export default function StartDrawerContent() {
               <Link asChild href="/views/reward-screen">
                 <DrawerButton
                   icon={require('@/assets/icons/hand-star-icon.png')}
-                  label="Reward Screen"
+                  label={'Fördelarna\nmed adhkar'}
                   onPress={() => {}}
                   backgroundColor="#4A96CA"
                   iconWidth={34}
