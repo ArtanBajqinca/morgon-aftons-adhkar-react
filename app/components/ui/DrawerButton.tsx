@@ -26,7 +26,7 @@ const DrawerButton = forwardRef<View, DrawerButtonProps>(
       />
       <View className="flex-1 justify-center">
         <Text
-          className="text-white text-[16.1px] font-avenir-heavy py-2 pt-5 leading-[16px] mr-5"
+          className="text-white text-[16.5px] font-avenir-heavy py-2 pt-4 leading-[17px] mr-5"
           numberOfLines={2}
         >
           {label}

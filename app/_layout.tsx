@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useState } from 'react';
-import { SplashScreen, Stack } from 'expo-router';
+import { SplashScreen } from 'expo-router';
 import { StatusBar, Platform, View } from 'react-native';
 import useLoadFonts from '@/app/hooks/useLoadFonts';
 import configureNavigationBar from '@/app/utils/configureNavigationBar';
+import { Stack } from 'expo-router/stack';
 
 // Prevent splash screen from auto-hiding
 SplashScreen.preventAutoHideAsync();
@@ -37,60 +38,24 @@ export default function RootLayout() {
         translucent
       />
       {/* Stack Navigator */}
-      <Stack>
-        <Stack.Screen
-          name="index"
-          options={{
-            gestureEnabled: true,
-            headerShown: false,
-            animation: 'fade',
-          }}
-        />
-        <Stack.Screen
-          name="views/morgon-screen"
-          options={{
-            gestureEnabled: true,
-            headerShown: false,
-            headerTitle: 'Morning Adhkar',
-            animation: 'fade',
-          }}
-        />
-        <Stack.Screen
-          name="views/afton-screen"
-          options={{
-            gestureEnabled: true,
-            headerShown: false,
-            headerTitle: 'Evening Adhkar',
-            animation: 'fade',
-          }}
-        />
-        <Stack.Screen
-          name="views/reward-screen"
-          options={{
-            gestureEnabled: true,
-            headerShown: false,
-            headerTitle: 'Rewards',
-            animation: 'fade',
-          }}
-        />
+      <Stack
+        screenOptions={{
+          headerShown: false,
+          gestureEnabled: true,
+          animation: 'fade',
+        }}
+      >
+        <Stack.Screen name="index" />
+        <Stack.Screen name="views/morgon-screen" />
+        <Stack.Screen name="views/afton-screen" />
+        <Stack.Screen name="views/reward-screen" />
         <Stack.Screen
           name="views/time-screen"
           options={{
-            gestureEnabled: true,
-            headerShown: false,
-            headerTitle: 'Morning & Evening Times',
-            animation: 'fade',
+            presentation: 'transparentModal',
           }}
         />
-        <Stack.Screen
-          name="views/about-screen"
-          options={{
-            gestureEnabled: true,
-            headerShown: false,
-            headerTitle: 'App Info',
-            animation: 'fade',
-          }}
-        />
+        <Stack.Screen name="views/about-screen" />
       </Stack>
     </View>
   );

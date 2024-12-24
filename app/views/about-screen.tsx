@@ -1,7 +1,7 @@
 import '@/globals.css';
 import { Text, View } from 'react-native';
 import { Link } from 'expo-router';
-import Button from '@/app/components/ui/Button';
+import BackButton from '@/app/components/ui/BackButton';
 
 export default function AboutScreen() {
   return (
@@ -11,7 +11,7 @@ export default function AboutScreen() {
       </Text>
 
       <Link asChild href="../">
-        <Button label="Back" />
+        <BackButton label="Back" />
       </Link>
     </View>
   );
