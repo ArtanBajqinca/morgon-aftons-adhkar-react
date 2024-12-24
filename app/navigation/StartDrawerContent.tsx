@@ -55,22 +55,17 @@ export default function StartDrawerContent() {
             </View>
 
             {/* App Info Button */}
-            <Pressable
-              className="bg-beige-500 w-[156px] h-[30px] rounded-[5px] flex-row items-center justify-center mb-[40px]"
-              onPress={() => {}}
-            >
-              <View className="flex-row items-center justify-center active:opacity-80">
+            <Link asChild href="/views/about-screen">
+              <Pressable className="bg-beige-500 w-[156px] h-[30px] rounded-[5px] flex-row items-center justify-center mb-[40px] active:opacity-80">
                 <Image
                   source={require('@/assets/icons/info-icon.png')}
                   className="h-[22px] w-[22px] mr-4"
                 />
-                <Link asChild href="/views/about-screen">
-                  <Text className="text-beige-800 text-[14px] font-avenir-black">
-                    APP INFO
-                  </Text>
-                </Link>
-              </View>
-            </Pressable>
+                <Text className="text-beige-800 text-[14px] font-avenir-black">
+                  APP INFO
+                </Text>
+              </Pressable>
+            </Link>
           </View>
         </View>
       </SafeAreaView>
