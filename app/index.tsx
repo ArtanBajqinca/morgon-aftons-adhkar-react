@@ -1,9 +1,10 @@
+import { useState } from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { View } from 'react-native';
 import { Link } from 'expo-router';
 import ImageButton from '@/app/components/ui/ImageButton';
 import StartSettingsTab from '@/app/components/ui/StartSettingsTab';
-import CustomDrawerContent from '@/app/navigation/CustomDrawerContent';
+import StartDrawerContent from '@/app/navigation/StartDrawerContent';
 
 const Drawer = createDrawerNavigator();
 
@@ -14,14 +15,12 @@ function StartScreenContent() {
       <View className="absolute left-0 top-[70px] z-10">
         <StartSettingsTab />
       </View>
-
       {/* Top Half - Morgon */}
       <View className="flex-1">
         <Link asChild href="/views/morgon-screen">
           <ImageButton image={require('@/assets/images/morgon.png')} />
         </Link>
       </View>
-
       {/* Bottom Half - Afton */}
       <View className="flex-1 ml-[-40px]">
         <Link asChild href="/views/afton-screen">
@@ -33,9 +32,11 @@ function StartScreenContent() {
 }
 
 export default function StartScreen() {
+  const [drawerContentKey, setDrawerContentKey] = useState(0);
+
   return (
     <Drawer.Navigator
-      drawerContent={CustomDrawerContent}
+      drawerContent={() => <StartDrawerContent key={drawerContentKey} />}
       screenOptions={{
         drawerStyle: {
           width: 235,
