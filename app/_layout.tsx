@@ -48,14 +48,24 @@ export default function RootLayout() {
         <Stack.Screen name="index" />
         <Stack.Screen name="views/morgon-screen" />
         <Stack.Screen name="views/afton-screen" />
-        <Stack.Screen name="views/reward-screen" />
+        <Stack.Screen
+          name="views/reward-screen"
+          options={{
+            presentation: 'transparentModal',
+          }}
+        />
         <Stack.Screen
           name="views/time-screen"
           options={{
             presentation: 'transparentModal',
           }}
         />
-        <Stack.Screen name="views/about-screen" />
+        <Stack.Screen
+          name="views/about-screen"
+          options={{
+            presentation: 'transparentModal',
+          }}
+        />
       </Stack>
     </View>
   );

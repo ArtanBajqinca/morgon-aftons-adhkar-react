@@ -7,6 +7,7 @@ interface TimeRewardProps {
   icon: ImageSourcePropType;
   iconWidth: number;
   description: string;
+  RightSpace?: number;
 }
 
 export default function TimeReward({
@@ -15,10 +16,11 @@ export default function TimeReward({
   icon,
   iconWidth,
   description,
+  RightSpace = 0,
 }: TimeRewardProps) {
   return (
-    <View className="space-y-2">
-      <View className="flex-row items-center space-x-2">
+    <View className="">
+      <View className="flex-row items-center">
         <View className="bg-white px-6 pb-1 flex items-center justify-center mr-5">
           <Text
             className="font-lora-bold text-[22px] text-center"
@@ -36,7 +38,10 @@ export default function TimeReward({
           resizeMode="contain"
         />
       </View>
-      <Text className="text-white text-[18px] bg-red-500 font-avenir-heavy leading-[20px] mt-5">
+      <Text
+        className="text-white text-[18px] font-avenir-heavy  leading-[22px] mt-4"
+        style={{ marginRight: RightSpace }}
+      >
         {description}
       </Text>
     </View>
