@@ -4,18 +4,15 @@ import BackgroundOverlay from '@/app/components/ui/BackgroundOverlay';
 import TopBar from '@/app/components/ui/TopBar';
 import AdhkarDrawerContent from '@/app/drawer/AdhkarDrawerContent';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import StatusBarPlaceholder from '@/app/components/ui/StatusBarPlaceholder';
 
 const AdhkarDrawer = createDrawerNavigator();
 
 function MorgonContent() {
   return (
     <View className="flex-1 bg-[#F5E8B0]">
-      <StatusBar
-        barStyle="light-content"
-        backgroundColor="#363636"
-        translucent
-      />
       <BackgroundOverlay />
+      <StatusBarPlaceholder />
       <TopBar title="Morgons adhkar" />
     </View>
   );

@@ -15,7 +15,7 @@ export default function TopBar({ title }: TopBarProps) {
   };
 
   return (
-    <SafeAreaView>
+    <View>
       <View className="w-full h-[58px] bg-[#363636] flex-row items-center justify-between px-8">
         <Link asChild href="/">
           <Pressable>
@@ -41,6 +41,6 @@ export default function TopBar({ title }: TopBarProps) {
           />
         </Pressable>
       </View>
-    </SafeAreaView>
+    </View>
   );
 }

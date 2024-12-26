@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, Text, TouchableOpacity } from 'react-native';
+import { View, Image, Text, Pressable } from 'react-native';
 
 interface CheckboxOptionProps {
   label: string;
@@ -12,28 +12,28 @@ const CheckboxOption: React.FC<CheckboxOptionProps> = ({
   isChecked,
   onToggle,
 }) => (
-  <TouchableOpacity
-    activeOpacity={1}
-    className="flex-row items-center"
-    onPress={onToggle}
-  >
-    <View
-      className={`w-[25px] h-[25px] rounded-[5px] border-2 border-beige-500 items-center justify-center ${
-        isChecked ? 'bg-beige-500' : 'bg-transparent'
-      }`}
-    >
-      {isChecked && (
-        <Image
-          source={require('@/assets/icons/check-icon.png')}
-          className="w-[17px]"
-          resizeMode="contain"
-        />
-      )}
-    </View>
-    <Text className="ml-4 text-beige-500 font-avenir-heavy text-[19px]">
-      {label}
+  <Pressable onPressIn={onToggle}>
+    <Text>
+      <View className="flex-row items-center w-full">
+        <View
+          className={`w-[25px] h-[25px] rounded-[5px] border-2 border-beige-500 items-center justify-center ${
+            isChecked ? 'bg-beige-500' : 'bg-transparent'
+          }`}
+        >
+          {isChecked && (
+            <Image
+              source={require('@/assets/icons/check-icon.png')}
+              className="w-[19px]"
+              resizeMode="contain"
+            />
+          )}
+        </View>
+        <Text className="ml-4 text-beige-500 font-avenir-heavy text-[19px]">
+          {label}
+        </Text>
+      </View>
     </Text>
-  </TouchableOpacity>
+  </Pressable>
 );
 
 export default CheckboxOption;
