@@ -1,5 +1,5 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { View } from 'react-native';
+import { StatusBar, View } from 'react-native';
 import { Link } from 'expo-router';
 import ImageButton from '@/app/components/ui/ImageButton';
 import StartSettingsTab from '@/app/components/ui/StartSettingsTab';
@@ -10,6 +10,11 @@ const Drawer = createDrawerNavigator();
 function StartScreenContent() {
   return (
     <View className="flex-1">
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor="transparent"
+        translucent
+      />
       {/* Settings Tab */}
       <View className="absolute left-0 top-[70px] z-10">
         <StartSettingsTab />

@@ -1,19 +1,18 @@
 import '@/globals.css';
-import { Text, View } from 'react-native';
-import { Link } from 'expo-router';
-import BackButton from '@/app/components/ui/BackButton';
+import { StatusBar, View } from 'react-native';
 import BackgroundOverlay from '@/app/components/ui/BackgroundOverlay';
+import TopBar from '@/app/components/ui/TopBar';
 
 export default function AftonScreen() {
   return (
-    <View className="flex-1 items-center justify-center gap-10">
+    <View className="flex-1 bg-[#F5E8B0]">
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="#363636"
+        translucent
+      />
       <BackgroundOverlay />
-
-      <Text className="text-black text-[24px] font-bold">Afton Screen</Text>
-
-      <Link asChild href="/">
-        <BackButton />
-      </Link>
+      <TopBar title="Aftons adhkar" />
     </View>
   );
 }
