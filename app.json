@@ -9,14 +9,12 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "orientation": "portrait",
       "supportsTablet": true,
       "icon": "./assets/images/icon.png",
       "bundleIdentifier": "com.anonymous.morgonaftonsadhkarreact"
     },
     "android": {
       "adaptiveIcon": {
-        "orientation": "portrait",
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#f6e8b1"
       },
@@ -45,6 +43,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "87f99449-2a24-41d9-96dd-9146954e8380"
+      }
     }
   }
 }
