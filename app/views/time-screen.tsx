@@ -1,18 +1,15 @@
 import '@/globals.css';
-import { Text, View, Image } from 'react-native';
+import { Text, View } from 'react-native';
 import { Link } from 'expo-router';
 import BackButton from '@/app/components/ui/BackButton';
 import TimeReward from '@/app/components/ui/TimeReward';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import BackgroundOverlay from '@/app/components/ui/BackgroundOverlay';
 
 export default function TimeScreen() {
   return (
     <View className="flex-1 bg-orange-500">
-      {/* Background Image */}
-      <Image
-        source={require('@/assets/images/background-overlay1.png')}
-        className="absolute w-full h-full opacity-10"
-      />
+      <BackgroundOverlay />
 
       <SafeAreaView className="z-10">
         <View className="flex-row items-center mt-[40px] ">
@@ -36,8 +33,8 @@ export default function TimeScreen() {
                 titleColor="#F0981E"
                 icon={require('@/assets/icons/sunrise-icon.png')}
                 iconWidth={45}
-                RightSpace={70}
-                description="Dens tid är efter Fajr-bönen fram till soluppgången"
+                RightSpace={30}
+                description="Dens tid är efter Fajr-bönen fram till soluppgången (Shuruq)"
               />
 
               <TimeReward
