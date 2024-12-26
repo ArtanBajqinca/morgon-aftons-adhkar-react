@@ -3,9 +3,9 @@ import { StatusBar, View } from 'react-native';
 import { Link } from 'expo-router';
 import ImageButton from '@/app/components/ui/ImageButton';
 import StartSettingsTab from '@/app/components/ui/StartSettingsTab';
-import StartDrawerContent from '@/app/navigation/StartDrawerContent';
+import StartDrawerContent from '@/app/drawer/StartDrawerContent';
 
-const Drawer = createDrawerNavigator();
+const StartDrawer = createDrawerNavigator();
 
 function StartScreenContent() {
   return (
@@ -39,7 +39,7 @@ const drawerContent = () => <StartDrawerContent />;
 
 export default function StartScreen() {
   return (
-    <Drawer.Navigator
+    <StartDrawer.Navigator
       drawerContent={drawerContent}
       screenOptions={{
         drawerStyle: {
@@ -47,11 +47,11 @@ export default function StartScreen() {
         },
       }}
     >
-      <Drawer.Screen
+      <StartDrawer.Screen
         name="StartScreenContent"
         component={StartScreenContent}
         options={{ headerShown: false }}
       />
-    </Drawer.Navigator>
+    </StartDrawer.Navigator>
   );
 }

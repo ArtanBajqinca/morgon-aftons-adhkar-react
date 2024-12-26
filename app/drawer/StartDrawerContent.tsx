@@ -1,8 +1,8 @@
 import { View, Image, Text, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Link } from 'expo-router';
-import Ayah from '../components/ui/Ayah';
-import DrawerButton from '../components/ui/DrawerButton';
+import Ayah from '@/app/components/ui/Ayah';
+import DrawerButton from '@/app/components/ui/DrawerButton';
 
 export default function StartDrawerContent() {
   return (

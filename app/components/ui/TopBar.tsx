@@ -1,12 +1,19 @@
 import { Text, View, Image, Pressable } from 'react-native';
 import { Link } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useNavigation, DrawerActions } from '@react-navigation/native';
 
 interface TopBarProps {
   title: string;
 }
 
 export default function TopBar({ title }: TopBarProps) {
+  const navigation = useNavigation();
+
+  const handleSettingsPress = () => {
+    navigation.dispatch(DrawerActions.toggleDrawer());
+  };
+
   return (
     <SafeAreaView>
       <View className="w-full h-[58px] bg-[#363636] flex-row items-center justify-between px-8">
@@ -25,7 +32,7 @@ export default function TopBar({ title }: TopBarProps) {
           {title}
         </Text>
 
-        <Pressable>
+        <Pressable onPress={handleSettingsPress}>
           <Image
             source={require('@/assets/icons/settings-icon.png')}
             className="w-[28px]"
