@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, Text, Pressable } from 'react-native';
+import { View, Image, Text, Pressable, TouchableOpacity } from 'react-native';
 
 interface CheckboxOptionProps {
   label: string;
@@ -12,7 +12,11 @@ const CheckboxOption: React.FC<CheckboxOptionProps> = ({
   isChecked,
   onToggle,
 }) => (
-  <Pressable onPressIn={onToggle}>
+  <TouchableOpacity
+    onPressIn={onToggle}
+    activeOpacity={0.8}
+    hitSlop={{ top: 5, bottom: 5, left: 30, right: 30 }}
+  >
     <Text>
       <View className="flex-row items-center w-full">
         <View
@@ -33,7 +37,7 @@ const CheckboxOption: React.FC<CheckboxOptionProps> = ({
         </Text>
       </View>
     </Text>
-  </Pressable>
+  </TouchableOpacity>
 );
 
 export default CheckboxOption;
