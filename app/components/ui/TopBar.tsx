@@ -1,6 +1,5 @@
 import { Text, View, Image, Pressable } from 'react-native';
 import { Link } from 'expo-router';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, DrawerActions } from '@react-navigation/native';
 
 interface TopBarProps {

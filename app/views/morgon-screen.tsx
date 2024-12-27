@@ -1,5 +1,5 @@
 import '@/globals.css';
-import { View, StatusBar } from 'react-native';
+import { View } from 'react-native';
 import BackgroundOverlay from '@/app/components/ui/BackgroundOverlay';
 import TopBar from '@/app/components/ui/TopBar';
 import AdhkarDrawerContent from '@/app/drawer/AdhkarDrawerContent';
