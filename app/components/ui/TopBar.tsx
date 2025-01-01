@@ -17,7 +17,7 @@ export default function TopBar({ title }: TopBarProps) {
     <View>
       <View className="w-full h-[58px] bg-[#363636] flex-row items-center justify-between px-8">
         <Link asChild href="/">
-          <TouchableOpacity activeOpacity={0.7}>
+          <TouchableOpacity activeOpacity={0.7} style={{ padding: 10 }}>
             <Image
               source={require('@/assets/icons/back-icon.png')}
               className="w-[26px]"
@@ -27,11 +27,15 @@ export default function TopBar({ title }: TopBarProps) {
           </TouchableOpacity>
         </Link>
 
-        <Text className="text-[23px] text-beige-500 font-avenir-heavy">
+        <Text className="text-[23px] mx-100 text-beige-500 font-avenir-heavy">
           {title}
         </Text>
 
-        <TouchableOpacity activeOpacity={0.7} onPress={handleSettingsPress}>
+        <TouchableOpacity
+          activeOpacity={0.7}
+          onPress={handleSettingsPress}
+          style={{ padding: 10 }}
+        >
           <Image
             source={require('@/assets/icons/settings-icon.png')}
             className="w-[28px]"

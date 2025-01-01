@@ -44,6 +44,7 @@ export default function StartScreen() {
         drawerStyle: {
           width: 235,
         },
+        drawerType: 'front',
       }}
     >
       <StartDrawer.Screen

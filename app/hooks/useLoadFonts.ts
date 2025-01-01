@@ -1,6 +1,11 @@
 import { useFonts } from 'expo-font';
 import type { FontSource } from 'expo-font';
 
+import {
+  NotoSans_500Medium,
+  NotoSans_600SemiBold,
+} from '@expo-google-fonts/noto-sans';
+
 export default function useLoadFonts() {
   const [fontsLoaded] = useFonts({
     'Avenir-Black': require('@/assets/fonts/Avenir-Black.ttf') as FontSource,
@@ -14,6 +19,10 @@ export default function useLoadFonts() {
     'Me-Quran': require('@/assets/fonts/Me-Quran.ttf') as FontSource,
     'Noto-Sans-Arabic':
       require('@/assets/fonts/Noto-Sans-Arabic.ttf') as FontSource,
+    'Noto-Sans-Arabic-ExtraBold':
+      require('@/assets/fonts/Noto-Sans-Arabic-ExtraBold.ttf') as FontSource,
+    NotoSans_500Medium,
+    NotoSans_600SemiBold,
   });
 
   return fontsLoaded;

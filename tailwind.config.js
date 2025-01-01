@@ -14,6 +14,9 @@ module.exports = {
         'lora-regular': ['Lora-Regular'],
         'me-quran': ['Me-Quran'],
         'noto-sans-arabic': ['Noto-Sans-Arabic'],
+        'noto-sans-arabic-extra-bold': ['Noto-Sans-Arabic-ExtraBold'],
+        'noto-sans-medium': ['NotoSans_500Medium'],
+        'noto-sans-semi-bold': ['NotoSans_600SemiBold'],
       },
       colors: {
         white: '#FFFFFF',
