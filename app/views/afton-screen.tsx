@@ -5,6 +5,7 @@ import TopBar from '@/app/components/ui/TopBar';
 import AdhkarDrawerContent from '@/app/drawer/AdhkarDrawerContent';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import StatusBarPlaceholder from '@/app/components/ui/StatusBarPlaceholder';
+import drawerScreenOptions from '@/app/navigation/drawerOption';
 
 const AdhkarDrawer = createDrawerNavigator();
 
@@ -22,11 +23,7 @@ export default function AftonScreen() {
   return (
     <AdhkarDrawer.Navigator
       drawerContent={AdhkarDrawerContent}
-      screenOptions={{
-        drawerStyle: { width: 235 },
-        drawerPosition: 'right',
-        overlayColor: 'rgba(0, 0, 0, 0.7)',
-      }}
+      screenOptions={drawerScreenOptions}
     >
       <AdhkarDrawer.Screen
         name="AftonContent"
