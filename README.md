@@ -18,4 +18,6 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 
 3. Run it with android emulator or device
 
+   ```bash
    npx expo run:android --device
+   ```
