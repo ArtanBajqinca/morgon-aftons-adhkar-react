@@ -21,7 +21,7 @@ const ImageButton = forwardRef<View, IImageButtonProps>(
     >
       <Image
         source={image}
-        className="h-full w-full"
+        className="h-full w-[100.2%]"
         resizeMode="cover"
         accessibilityLabel="Image Button"
       />

@@ -50,21 +50,27 @@ export default function RootLayout() {
         <Stack.Screen name="views/afton-screen" />
         <Stack.Screen
           name="views/reward-screen"
-          options={{
-            presentation: 'transparentModal',
-          }}
+          options={
+            Platform.OS === 'android'
+              ? { presentation: 'transparentModal' }
+              : {}
+          }
         />
         <Stack.Screen
           name="views/time-screen"
-          options={{
-            presentation: 'transparentModal',
-          }}
+          options={
+            Platform.OS === 'android'
+              ? { presentation: 'transparentModal' }
+              : {}
+          }
         />
         <Stack.Screen
           name="views/about-screen"
-          options={{
-            presentation: 'transparentModal',
-          }}
+          options={
+            Platform.OS === 'android'
+              ? { presentation: 'transparentModal' }
+              : {}
+          }
         />
       </Stack>
     </View>

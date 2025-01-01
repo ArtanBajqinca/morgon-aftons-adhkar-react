@@ -1,5 +1,5 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { StatusBar, View } from 'react-native';
+import { SafeAreaView, StatusBar, TouchableOpacity, View } from 'react-native';
 import { Link } from 'expo-router';
 import ImageButton from '@/app/components/ui/ImageButton';
 import StartSettingsTab from '@/app/components/ui/StartSettingsTab';
@@ -9,16 +9,15 @@ const StartDrawer = createDrawerNavigator();
 
 function StartScreenContent() {
   return (
-    <View className="flex-1">
-      <StatusBar
-        barStyle="dark-content"
-        backgroundColor="transparent"
-        translucent
-      />
+    <View className="flex-1 z-10">
+      <StatusBar barStyle="dark-content" backgroundColor="transparent" />
       {/* Settings Tab */}
-      <View className="absolute left-0 top-[70px] z-10">
-        <StartSettingsTab />
-      </View>
+      <SafeAreaView className="absolute mt-[8vh] z-10">
+        <TouchableOpacity>
+          <StartSettingsTab />
+        </TouchableOpacity>
+      </SafeAreaView>
+
       {/* Top Half - Morgon */}
       <View className="flex-1">
         <Link asChild href="/views/morgon-screen">

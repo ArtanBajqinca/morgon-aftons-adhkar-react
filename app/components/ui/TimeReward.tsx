@@ -39,7 +39,7 @@ export default function TimeReward({
         />
       </View>
       <Text
-        className="text-white text-[18px] font-avenir-heavy  leading-[22px] mt-4"
+        className="text-white text-[18px] font-avenir-heavy leading-[22px] mt-3"
         style={{ marginRight: RightSpace }}
       >
         {description}

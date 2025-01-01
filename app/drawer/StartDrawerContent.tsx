@@ -18,11 +18,12 @@ export default function StartDrawerContent() {
           {/* Top Section */}
           <View>
             {/* Logo Section */}
-            <View className="items-center py-[70px] ">
+            <View className="items-center my-[50px] ">
               <Image
                 source={require('@/assets/images/logo.png')}
-                className="h-[100px]"
+                className="w-[235px] h-[100px]"
                 resizeMode="contain"
+                style={{ zIndex: 1 }} // Adjust zIndex to ensure it does not overlap with main content
               />
             </View>
 
@@ -50,7 +51,7 @@ export default function StartDrawerContent() {
           </View>
           <View className="flex-1 items-center">
             {/* Ayah Section */}
-            <View className="flex-1 justify-end mb-[20px]">
+            <View className="flex-1 justify-end mb-[10px]">
               <Ayah />
             </View>
 

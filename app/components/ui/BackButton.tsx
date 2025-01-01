@@ -10,7 +10,7 @@ const BackButton = forwardRef<View, ButtonProps>(
     <Pressable
       ref={ref}
       onPress={onPress}
-      className="bg-gray-500 w-[100px] h-[57px] rounded-r-[20px] active:opacity-90"
+      className="bg-gray-500 mt-[8vh] w-[100px] h-[57px] rounded-r-[20px] active:opacity-90"
       {...props}
     >
       <View className="flex-1 items-end justify-center pr-[30px]">
