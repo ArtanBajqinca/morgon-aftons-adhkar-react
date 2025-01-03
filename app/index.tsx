@@ -11,6 +11,7 @@ function StartScreenContent() {
   return (
     <View className="flex-1 z-10">
       <StatusBar barStyle="dark-content" backgroundColor="transparent" />
+
       {/* Settings Tab */}
       <SafeAreaView className="absolute mt-[8vh] z-10">
         <TouchableOpacity>
@@ -24,6 +25,7 @@ function StartScreenContent() {
           <ImageButton image={require('@/assets/images/morgon.png')} />
         </Link>
       </View>
+
       {/* Bottom Half - Afton */}
       <View className="flex-1 ml-[-40px]">
         <Link asChild href="/views/afton-screen">

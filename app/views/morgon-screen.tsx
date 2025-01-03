@@ -5,7 +5,8 @@ import AdhkarDrawerContent from '@/app/drawer/AdhkarDrawerContent';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import StatusBarPlaceholder from '@/app/components/ui/StatusBarPlaceholder';
 import drawerScreenOptions from '@/app/navigation/drawerOption';
-import AdhkarTitleComponent from '../components/ui/AdhkarTitleComponent';
+import AdhkarTitleComponent from '@/app/components/ui/AdhkarTitleComponent';
+import BottomDivider from '@/app/components/ui/BottomDivider';
 
 const AdhkarDrawer = createDrawerNavigator();
 
@@ -23,7 +24,7 @@ function MorgonContent() {
         <View className="flex-1">
           <View className="h-[10px] bg-beige-550" />
 
-          <View className="flex-col items-left mx-[3vh] mb-[400px]">
+          <View className="flex-col items-left mx-[3vh] mb-[30px]">
             <View className="flex-1 items-center justify-between">
               <View className="my-[30px]">
                 <View className="flex items-center justify-center bg-orange-500 rounded-[7px] w-[38px] h-[38px]">
@@ -62,20 +63,21 @@ function MorgonContent() {
               [ثلاث مرات]
             </Text>
 
-            <View className="flex-row mt-[20px]">
+            <View className="flex-row  items-center mt-[20px]">
               <Text className="flex-1 text-[15px] align-middle font-avenir-roman text-gray-500">
                 At-Tirmidhî 5/466 nr 3391
               </Text>
 
               <View className="flex-row">
-                <View className="items-center justify-center bg-beige-600 rounded-[20px] px-4 my-[0px]">
-                  <Text className="text-[13px] font-avenir-black text-beige-500 my-[3px]">
+                <View className=" bg-beige-600 rounded-[20px] px-4 py-0 pt-[2px]">
+                  <Text className="text-[14px] flex-1 font-avenir-black text-beige-500 my-[4px]">
                     LÄS BELÖNING
                   </Text>
                 </View>
               </View>
             </View>
           </View>
+          <BottomDivider />
         </View>
       </ScrollView>
     </View>

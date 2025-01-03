@@ -12,14 +12,14 @@ export default function AboutScreen() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <ScrollView className="flex-1 bg-beige-500">
+    <View className="flex-1 bg-beige-500">
       <BackgroundOverlay />
 
       <Link asChild href="../">
         <BackButton />
       </Link>
-      <View className="px-12 pt-[4vh]">
-        <View className="bg-gray-500 px-10 rounded-[10px] items-center py-8">
+      <ScrollView className="px-12  mt-[4vh]">
+        <View className="bg-gray-500 px-10 rounded-[10px] items-center py-8 mb-[4vh]">
           <View className="w-full items-center">
             <Image
               source={require('@/assets/images/logo.png')}
@@ -40,14 +40,14 @@ export default function AboutScreen() {
                   linkedInUrl="https://www.linkedin.com/in/artanbajqinca/"
                 />
                 <Text className="text-beige-500 font-avenir-light">
-                  UX/UI Design, Utveckling
+                  {'- UX/UI Design\n- Utveckling'}
                 </Text>
                 <NameWithLinkedIn
                   name="Mohammad Obihony"
                   linkedInUrl="https://www.linkedin.com/in/mohammad-winter/"
                 />
                 <Text className="text-beige-500 font-avenir-light">
-                  Utveckling
+                  - Utveckling
                 </Text>
               </View>
             </View>
@@ -78,7 +78,7 @@ export default function AboutScreen() {
             </View>
           </View>
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </View>
   );
 }
