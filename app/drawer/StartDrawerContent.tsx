@@ -3,8 +3,13 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Link } from 'expo-router';
 import Ayah from '@/app/components/ui/Ayah';
 import DrawerButton from '@/app/components/ui/DrawerButton';
+import * as Haptics from 'expo-haptics';
 
 export default function StartDrawerContent() {
+  const handlePress = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Soft);
+  };
+
   return (
     <View className="flex-1 bg-beige-800">
       {/* Background Overlay */}
@@ -57,7 +62,10 @@ export default function StartDrawerContent() {
 
             {/* App Info Button */}
             <Link asChild href="/views/about-screen">
-              <Pressable className="bg-beige-500 w-[156px] h-[30px] rounded-[5px] flex-row items-center justify-center mb-[40px] active:opacity-80">
+              <Pressable
+                onPress={handlePress}
+                className="bg-beige-500 w-[156px] h-[30px] rounded-[5px] flex-row items-center justify-center mb-[40px] active:opacity-80"
+              >
                 <Image
                   source={require('@/assets/icons/info-icon.png')}
                   className="h-[22px] w-[22px] mr-2"

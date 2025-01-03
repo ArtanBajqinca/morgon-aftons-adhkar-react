@@ -1,16 +1,18 @@
 import { forwardRef } from 'react';
 import { View, Image, TouchableOpacity } from 'react-native';
 import { useNavigation, DrawerActions } from '@react-navigation/native';
+import * as Haptics from 'expo-haptics';
 
 const StartSettingsTab = forwardRef<View>((props, ref) => {
   const navigation = useNavigation();
 
   const handlePress = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Soft);
     navigation.dispatch(DrawerActions.toggleDrawer());
   };
 
   return (
-    <View className="">
+    <View>
       <TouchableOpacity
         ref={ref}
         onPress={handlePress}

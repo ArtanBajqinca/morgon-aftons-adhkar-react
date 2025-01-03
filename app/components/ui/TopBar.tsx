@@ -1,6 +1,8 @@
-import { Text, View, Image, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { Link } from 'expo-router';
 import { useNavigation, DrawerActions } from '@react-navigation/native';
+import * as Haptics from 'expo-haptics';
 
 interface TopBarProps {
   title: string;
@@ -9,7 +11,13 @@ interface TopBarProps {
 export default function TopBar({ title }: TopBarProps) {
   const navigation = useNavigation();
 
+  const handleBackPress = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Soft);
+    navigation.goBack();
+  };
+
   const handleSettingsPress = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Soft);
     navigation.dispatch(DrawerActions.toggleDrawer());
   };
 
@@ -17,7 +25,11 @@ export default function TopBar({ title }: TopBarProps) {
     <View>
       <View className="w-full h-[58px] bg-[#363636] flex-row items-center justify-between px-8">
         <Link asChild href="/">
-          <TouchableOpacity activeOpacity={0.7} style={{ padding: 10 }}>
+          <TouchableOpacity
+            activeOpacity={0.7}
+            onPress={handleBackPress}
+            style={{ padding: 10 }}
+          >
             <Image
               source={require('@/assets/icons/back-icon.png')}
               className="w-[26px]"
