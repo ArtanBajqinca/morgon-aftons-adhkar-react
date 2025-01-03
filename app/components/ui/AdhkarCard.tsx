@@ -4,6 +4,7 @@ import * as Haptics from 'expo-haptics';
 
 interface AdhkarCardProps {
   id: number;
+  // eslint-disable-next-line react/no-unused-prop-types
   en?: string;
   sv: string;
   ar: string;
@@ -117,7 +118,7 @@ const AdhkarCard: React.FC<AdhkarCardProps> = ({
             onPress={closeModal}
           >
             <View className="bg-beige-500 rounded-lg p-6 w-4/5">
-              <Text className="text-[17px] font-avenir-medium text-gray-500 leading-[22px] text-left mb-7">
+              <Text className="text-[18px] font-avenir-medium text-gray-500 leading-[22px] text-left mb-7">
                 {reward}
               </Text>
               <View className="w-full">

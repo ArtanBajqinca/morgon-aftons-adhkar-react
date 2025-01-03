@@ -46,8 +46,22 @@ export default function RootLayout() {
         }}
       >
         <Stack.Screen name="index" />
-        <Stack.Screen name="views/morgon-screen" />
-        <Stack.Screen name="views/afton-screen" />
+        <Stack.Screen
+          name="views/morgon-screen"
+          options={
+            Platform.OS === 'android'
+              ? { presentation: 'transparentModal' }
+              : {}
+          }
+        />
+        <Stack.Screen
+          name="views/afton-screen"
+          options={
+            Platform.OS === 'android'
+              ? { presentation: 'transparentModal' }
+              : {}
+          }
+        />
         <Stack.Screen
           name="views/reward-screen"
           options={

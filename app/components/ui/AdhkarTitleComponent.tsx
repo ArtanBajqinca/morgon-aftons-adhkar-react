@@ -27,7 +27,7 @@ const AdhkarTitleComponent: React.FC<AdhkarTitleComponentProps> = ({
     <View className="flex-1">
       <View className="mx-14">
         {/* Description */}
-        <Text className="text-center text-[15px] font-avenir-roman text-gray-500 mt-[15px] mb-[40px] tracking-widest">
+        <Text className="text-center text-[16px] font-avenir-roman text-gray-500 mt-[15px] mb-[40px] tracking-widest">
           {description}
         </Text>
       </View>
