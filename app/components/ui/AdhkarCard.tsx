@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Modal, Pressable } from 'react-native';
 import * as Haptics from 'expo-haptics';
 
 interface AdhkarCardProps {
   id: number;
-  // eslint-disable-next-line react/no-unused-prop-types
   en?: string;
   sv: string;
   ar: string;
@@ -25,11 +24,15 @@ const AdhkarCard: React.FC<AdhkarCardProps> = ({
   repetitionText,
   repetitionTextArabic,
 }) => {
-  const [showReward, setShowReward] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
 
   const handlePress = () => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Soft);
-    setShowReward(!showReward);
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
   };
 
   return (
@@ -47,53 +50,90 @@ const AdhkarCard: React.FC<AdhkarCardProps> = ({
           </View>
         </View>
 
-        <Text className="text-[20px] font-avenir-heavy text-gray-500 leading-[25px]">
+        <Text className="text-[20px] font-avenir-heavy tracking-[0.1px] text-gray-500 leading-[25px]">
           {sv}
         </Text>
 
         {repetitionText && (
-          <Text className="text-[14px] font-noto-sans-semi-bold text-beige-700 pt-[3px]">
+          <Text className="text-[14px] font-noto-sans-semi-bold text-beige-700 pt-[0px]">
             {repetitionText}
           </Text>
         )}
 
-        <Text className="text-[20px] font-avenir-heavy text-gray-500 pt-[17px] leading-[25px]">
+        <Text className="text-[20px] font-avenir-heavy tracking-[0.1px] text-gray-500 pt-[20px] leading-[25px]">
           {transliteration}
         </Text>
 
+        {repetitionText && (
+          <Text className="text-[14px] font-noto-sans-semi-bold text-beige-700 pt-[0px]">
+            {repetitionText}
+          </Text>
+        )}
+
+        <Text className="text-[28px] font-me-quran text-right text-gray-500 pt-[26px] leading-[49px]">
+          {ar}
+        </Text>
+
         {repetitionTextArabic && (
-          <Text className="text-[14px] font-noto-sans-semi-bold text-beige-700 pt-[3px]">
+          <Text className="text-[19px] font-me-quran text-beige-700 mt-[-5px] text-right">
             {repetitionTextArabic}
           </Text>
         )}
 
-        <Text className="text-[27px] font-me-quran text-right text-gray-500 pt-[17px] leading-[49px]">
-          {ar}
-        </Text>
-
-        {showReward && reward && (
-          <Text className="text-[20px] text-right font-me-quran text-beige-700">
-            {reward}
-          </Text>
-        )}
-
-        <View className="flex-row items-center mt-[20px]">
+        <View className="flex-row items-center mt-[14px]">
           <Text className="flex-1 text-[15px] align-middle font-avenir-roman text-gray-500">
             {source}
           </Text>
 
-          <View className="flex-row">
-            <TouchableOpacity
-              onPress={handlePress}
-              className="bg-beige-600 rounded-[20px] px-4 py-0 pt-[2px]"
-            >
-              <Text className="text-[14px] flex-1 font-avenir-black text-beige-500 my-[4px]">
-                {showReward ? 'DÖLJ BELÖNING' : 'LÄS BELÖNING'}
-              </Text>
-            </TouchableOpacity>
-          </View>
+          {reward && (
+            <View className="flex-row">
+              <TouchableOpacity
+                onPress={handlePress}
+                className="bg-beige-600 rounded-[20px] px-4 py-0 pt-[2px]"
+              >
+                <Text className="text-[14px] flex-1 font-avenir-black text-beige-500 my-[4px]">
+                  LÄS BELÖNING
+                </Text>
+              </TouchableOpacity>
+            </View>
+          )}
         </View>
       </View>
+
+      {reward && (
+        <Modal
+          animationType="fade"
+          transparent
+          visible={modalVisible}
+          onRequestClose={closeModal}
+        >
+          <Pressable
+            style={{
+              flex: 1,
+              justifyContent: 'center',
+              alignItems: 'center',
+              backgroundColor: 'rgba(0, 0, 0, 0.7)',
+            }}
+            onPress={closeModal}
+          >
+            <View className="bg-beige-500 rounded-lg p-6 w-4/5">
+              <Text className="text-[17px] font-avenir-medium text-gray-500 leading-[22px] text-left mb-7">
+                {reward}
+              </Text>
+              <View className="w-full">
+                <Pressable
+                  onPress={closeModal}
+                  className="bg-beige-600 rounded-lg px-6 py-[2px]"
+                >
+                  <Text className="text-[16px] font-avenir-black tracking-[3px] text-beige-500 text-center ">
+                    STÄNG
+                  </Text>
+                </Pressable>
+              </View>
+            </View>
+          </Pressable>
+        </Modal>
+      )}
     </View>
   );
 };
